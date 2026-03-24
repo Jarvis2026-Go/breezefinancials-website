@@ -117,23 +117,34 @@
                         <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Gift Card Liability</span><span class="spa-kpi-badge amber">Unredeemed</span></div><span class="spa-kpi-val pf">$24,600</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="spg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4933b" stop-opacity=".25"/><stop offset="100%" stop-color="#c4933b" stop-opacity="0"/></linearGradient></defs><path d="M0,16 L16,12 L33,10 L50,14 L66,18 L83,20 L100,22 L100,28 L0,28Z" fill="url(#spg3)"/><polyline points="0,16 16,12 33,10 50,14 66,18 83,20 100,22" fill="none" stroke="#c4933b" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="22" r="3" fill="#c4933b"/></svg></div>
                         <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Client Retention</span><span class="spa-kpi-badge up">Above avg</span></div><span class="spa-kpi-val pf">72%</span><div class="kpi-ring-wrap"><svg class="kpi-ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(96,124,117,.08)" stroke-width="3.5"/><circle cx="18" cy="18" r="15.9" fill="none" stroke="url(#ringGrad)" stroke-width="3.5" stroke-dasharray="72, 100" stroke-linecap="round"/><defs><linearGradient id="ringGrad"><stop offset="0%" stop-color="#3d8b6e"/><stop offset="100%" stop-color="#607c75"/></linearGradient></defs></svg></div></div>
                     </div>
-                    <!-- Profit per Hour Horizontal Bars + Donut -->
-                    <div class="dash-three-col">
-                        <div class="dash-panel" style="grid-column:span 2">
-                            <div class="dash-panel-head"><h4>Profit per Treatment Hour</h4><span class="dash-panel-tag">Which services are most valuable per hour of room time?</span></div>
-                            <div class="hbar-chart">
-                                <div class="hbar"><span class="hbar-label">Hot Stone Massage</span><div class="hbar-track"><div class="hbar-fill" style="width:82%;background:linear-gradient(90deg,#4a6159,#7a9d94)"></div></div><span class="hbar-val pf">$215/hr</span></div>
-                                <div class="hbar"><span class="hbar-label">Aromatherapy Facial</span><div class="hbar-track"><div class="hbar-fill" style="width:72%;background:linear-gradient(90deg,#4a6159,#7a9d94)"></div></div><span class="hbar-val pf">$189/hr</span></div>
-                                <div class="hbar"><span class="hbar-label">Body Wrap</span><div class="hbar-track"><div class="hbar-fill" style="width:58%;background:linear-gradient(90deg,#607c75,#7a9d94)"></div></div><span class="hbar-val pf">$152/hr</span></div>
-                                <div class="hbar"><span class="hbar-label">Mani/Pedi Combo</span><div class="hbar-track"><div class="hbar-fill" style="width:45%;background:linear-gradient(90deg,#c4a18b,#d4b9a7)"></div></div><span class="hbar-val pf">$118/hr</span></div>
-                                <div class="hbar"><span class="hbar-label">Express Facial</span><div class="hbar-track"><div class="hbar-fill" style="width:30%;background:linear-gradient(90deg,#c4933b,#dab15e)"></div></div><span class="hbar-val pf">$78/hr</span></div>
-                                <div class="hbar"><span class="hbar-label">Groupon Massage</span><div class="hbar-track"><div class="hbar-fill rose" style="width:15%;background:linear-gradient(90deg,#b85a5a,#d07878)"></div></div><span class="hbar-val pf" style="color:#b85a5a">-$22/hr</span></div>
+                    <!-- Profit per Hour Bars (full width) -->
+                    <div class="dash-panel" style="margin-bottom:20px">
+                        <div class="dash-panel-head"><h4>Profit per Treatment Hour</h4><span class="dash-panel-tag">Which services are most valuable per hour of room time?</span></div>
+                        <div class="hbar-chart">
+                            <div class="hbar"><span class="hbar-label">Hot Stone Massage</span><div class="hbar-track"><div class="hbar-fill" style="width:82%;background:linear-gradient(90deg,#4a6159,#7a9d94)"></div></div><span class="hbar-val pf">$215/hr</span></div>
+                            <div class="hbar"><span class="hbar-label">Aromatherapy Facial</span><div class="hbar-track"><div class="hbar-fill" style="width:72%;background:linear-gradient(90deg,#4a6159,#7a9d94)"></div></div><span class="hbar-val pf">$189/hr</span></div>
+                            <div class="hbar"><span class="hbar-label">Body Wrap</span><div class="hbar-track"><div class="hbar-fill" style="width:58%;background:linear-gradient(90deg,#607c75,#7a9d94)"></div></div><span class="hbar-val pf">$152/hr</span></div>
+                            <div class="hbar"><span class="hbar-label">Mani/Pedi Combo</span><div class="hbar-track"><div class="hbar-fill" style="width:45%;background:linear-gradient(90deg,#c4a18b,#d4b9a7)"></div></div><span class="hbar-val pf">$118/hr</span></div>
+                            <div class="hbar"><span class="hbar-label">Express Facial</span><div class="hbar-track"><div class="hbar-fill" style="width:30%;background:linear-gradient(90deg,#c4933b,#dab15e)"></div></div><span class="hbar-val pf">$78/hr</span></div>
+                            <div class="hbar"><span class="hbar-label">Groupon Massage</span><div class="hbar-track"><div class="hbar-fill rose" style="width:15%;background:linear-gradient(90deg,#b85a5a,#d07878)"></div></div><span class="hbar-val pf" style="color:#b85a5a">-$22/hr</span></div>
+                        </div>
+                    </div>
+                    <!-- Donut + Gift Card Insight side by side -->
+                    <div class="dash-two-col" style="margin-bottom:20px">
+                        <div class="dash-panel donut-panel-row">
+                            <div class="dash-panel-head"><h4>Revenue Mix</h4></div>
+                            <div class="donut-row">
+                                <div class="donut-wrap-sm"><svg viewBox="0 0 42 42" class="donut-chart"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#607c75" stroke-width="5" stroke-dasharray="42 58" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#3d8b6e" stroke-width="5" stroke-dasharray="22 78" stroke-dashoffset="83"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4a18b" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="61"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4933b" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="43"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#b85a5a" stroke-width="5" stroke-dasharray="6 94" stroke-dashoffset="31"/></svg><div class="donut-center"><span class="donut-val pf">$86K</span><span class="donut-sub">monthly</span></div></div>
+                                <div class="donut-legend"><span><i style="background:#607c75"></i>Massage 42%</span><span><i style="background:#3d8b6e"></i>Facials 22%</span><span><i style="background:#c4a18b"></i>Body 18%</span><span><i style="background:#c4933b"></i>Gift Cards 12%</span><span><i style="background:#b85a5a"></i>Retail 6%</span></div>
                             </div>
                         </div>
-                        <div class="dash-panel donut-panel">
-                            <div class="dash-panel-head"><h4>Revenue Mix</h4></div>
-                            <div class="donut-wrap"><svg viewBox="0 0 42 42" class="donut-chart"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#607c75" stroke-width="5" stroke-dasharray="42 58" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#3d8b6e" stroke-width="5" stroke-dasharray="22 78" stroke-dashoffset="83"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4a18b" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="61"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4933b" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="43"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#b85a5a" stroke-width="5" stroke-dasharray="6 94" stroke-dashoffset="31"/></svg><div class="donut-center"><span class="donut-val pf">$86K</span><span class="donut-sub">monthly</span></div></div>
-                            <div class="donut-legend"><span><i style="background:#607c75"></i>Massage 42%</span><span><i style="background:#3d8b6e"></i>Facials 22%</span><span><i style="background:#c4a18b"></i>Body 18%</span><span><i style="background:#c4933b"></i>Gift Cards 12%</span><span><i style="background:#b85a5a"></i>Retail 6%</span></div>
+                        <div class="dash-panel">
+                            <div class="dash-panel-head"><h4>Gift Card & Deferred Revenue</h4><span class="dash-panel-tag">Liabilities hiding in your P&L</span></div>
+                            <div class="gc-stats">
+                                <div class="gc-stat"><span class="gc-val pf" style="color:#b85a5a">$24,600</span><span class="gc-label">Unredeemed gift cards — booked as revenue but not yet earned</span></div>
+                                <div class="gc-stat"><span class="gc-val pf" style="color:#c4933b">$18,200</span><span class="gc-label">Prepaid packages — 58% of sessions still undelivered</span></div>
+                                <div class="gc-stat"><span class="gc-val pf" style="color:#3d8b6e">$61,400</span><span class="gc-label">True recognized revenue after adjusting for deferred income</span></div>
+                            </div>
                         </div>
                     </div>
                     <!-- Insight -->
@@ -199,7 +210,7 @@
             <div class="dash-card dash-view" id="dash-resto">
                 <div class="dash-spa-header rest-header">
                     <div class="dash-spa-top"><div class="dash-brand-badge"><span class="dash-brand-dot"></span> Breeze Financials</div><span class="dash-date">March 2026</span></div>
-                    <div class="dash-spa-title"><span class="dash-leaf">&#9749; Restaurant & Cafe</span><h3>Rosemount Cafe</h3><p>Menu Profitability &bull; Food Cost Analysis &bull; Category Margins</p></div>
+                    <div class="dash-spa-title"><span class="dash-leaf">&#9749; Restaurant & Cafe</span><h3>Queen Street Kitchen</h3><p>Menu Profitability &bull; Food Cost Analysis &bull; Category Margins</p></div>
                 </div>
                 <div class="dash-spa-body">
                     <div class="dash-kpi-strip">
