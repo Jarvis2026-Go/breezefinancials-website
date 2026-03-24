@@ -251,6 +251,15 @@ img { max-width: 100%; display: block; }
 .credentials-grid span { display:flex; align-items:center; gap:8px; font-size:14px; color:var(--gray-700); }
 .about-avail { font-size:13px; color:var(--gray-500); margin-top:12px; }
 
+/* ---- Promise Section ---- */
+.promise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1000px; margin:0 auto; }
+@media (max-width:768px) { .promise-grid { grid-template-columns:1fr; } }
+.promise-card { background:#fff; border-radius:16px; padding:32px; border:2px solid var(--gray-100); box-shadow:var(--shadow-lg); text-align:center; transition:all .3s; }
+.promise-card:hover { border-color:var(--teal-300); transform:translateY(-4px); box-shadow:var(--shadow-xl); }
+.promise-icon { width:56px; height:56px; background:var(--teal-50); border-radius:14px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+.promise-card h3 { font-size:17px; font-weight:700; color:var(--gray-900); margin-bottom:8px; }
+.promise-card p { font-size:14px; color:var(--gray-600); line-height:1.6; }
+
 /* ---- Booking Section ---- */
 .hero-badge-inline { display:inline-flex; align-items:center; gap:8px; background:var(--teal-100); color:var(--teal-800); font-size:13px; font-weight:600; padding:6px 16px; border-radius:9999px; margin-bottom:16px; }
 .avail-tag { display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.7); backdrop-filter:blur(4px); border:1px solid var(--teal-100); padding:10px 20px; border-radius:12px; font-size:14px; color:var(--gray-700); font-weight:500; margin-top:16px; }
