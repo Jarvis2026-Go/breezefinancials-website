@@ -283,7 +283,8 @@ img { max-width: 100%; display: block; }
 .pricing-features li svg { flex-shrink:0; margin-top:3px; }
 .flip-backline { font-size:12px; color:var(--gray-500); font-style:italic; text-align:center; }
 
-.pricing-commit { text-align:center; font-size:13px; color:var(--gray-400); margin-top:16px; }
+.pricing-compare { text-align:center; font-size:15px; color:var(--gray-600); margin-top:24px; }
+.pricing-commit { text-align:center; font-size:13px; color:var(--gray-400); margin-top:8px; }
 
 /* Build vs Buy Comparison */
 .build-vs-buy { max-width:820px; margin:40px auto 0; background:#fff; border-radius:20px; overflow:hidden; box-shadow:var(--shadow-xl); border:1px solid var(--gray-100); }
