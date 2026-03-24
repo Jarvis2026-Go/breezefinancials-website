@@ -397,99 +397,175 @@
 </section>
 
 <!-- ========== DASHBOARD SHOWCASE ========== -->
-<section class="section bg-gray-50" id="dashboards">
+<section class="section" id="dashboards" style="background:linear-gradient(180deg, #faf8f5 0%, #fff 100%)">
     <div class="container">
         <div class="section-head">
             <h2>See What You <span class="text-teal">Actually Get</span></h2>
-            <p>Not just reports — real-time financial dashboards with insights you can act on today. Here's a preview of what our clients see every month.</p>
+            <p>Not just spreadsheets — live financial dashboards that show you exactly where your money goes, which services print profit, and where your marketing dollars work hardest.</p>
         </div>
 
         <div class="dash-showcase">
-            <!-- Dashboard 1: Spa/Clinic -->
-            <div class="dash-card">
-                <div class="dash-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Spa & Wellness Vertical</div>
-                <div class="dash-mockup">
-                    <div class="dash-header-bar">
-                        <span class="dash-dot" style="background:#ef4444"></span>
-                        <span class="dash-dot" style="background:#f59e0b"></span>
-                        <span class="dash-dot" style="background:#22c55e"></span>
-                        <span style="font-size:11px;color:var(--gray-400);margin-left:8px">Radiant Med Spa — Financial Command Center</span>
+            <!-- ====== DASHBOARD 1: Spa & Wellness ====== -->
+            <div class="dash-card spa">
+                <!-- Spa Header -->
+                <div class="dash-spa-header">
+                    <div class="dash-spa-top">
+                        <div class="dash-brand-badge"><span class="dash-brand-dot"></span> Breeze Financials</div>
+                        <span class="dash-date">March 2026</span>
                     </div>
-                    <div class="dash-body">
-                        <div class="dash-kpi-row">
-                            <div class="dash-kpi"><span class="dash-kpi-label">Monthly Revenue</span><span class="dash-kpi-val">$127,400</span><span class="dash-kpi-delta up">+12% vs last month</span></div>
-                            <div class="dash-kpi"><span class="dash-kpi-label">Avg Service Margin</span><span class="dash-kpi-val">64.2%</span><span class="dash-kpi-delta up">+3.1 pts</span></div>
-                            <div class="dash-kpi"><span class="dash-kpi-label">Gift Card Liability</span><span class="dash-kpi-val">$18,200</span><span class="dash-kpi-delta down">Unredeemed risk</span></div>
-                        </div>
-                        <div class="dash-chart-area">
-                            <div class="dash-chart">
-                                <div class="dash-chart-title">Service Profitability by Category</div>
-                                <div class="dash-bars">
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Injectables</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:82%"></div></div><span class="dash-bar-val">82%</span></div>
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Facials</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:71%"></div></div><span class="dash-bar-val">71%</span></div>
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Body Treatments</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:58%"></div></div><span class="dash-bar-val">58%</span></div>
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Retail Products</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:42%;background:var(--teal-300)"></div></div><span class="dash-bar-val">42%</span></div>
-                                </div>
-                            </div>
-                            <div class="dash-chart">
-                                <div class="dash-chart-title">Revenue Trend (6 Months)</div>
-                                <div class="dash-mini-line">
-                                    <svg viewBox="0 0 200 60" preserveAspectRatio="none"><polyline points="0,50 33,42 66,38 100,30 133,22 166,18 200,12" fill="none" stroke="var(--teal-500)" stroke-width="2.5"/><polyline points="0,50 33,42 66,38 100,30 133,22 166,18 200,12 200,60 0,60" fill="url(#tealGrad)" opacity=".15"/><defs><linearGradient id="tealGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--teal-500)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs></svg>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="dash-spa-title">
+                        <span class="dash-leaf">&#10022; Spa & Med Spa</span>
+                        <h3>Financial Command Center</h3>
+                        <p>Radiant Med Spa — Service Profitability & Marketing ROI</p>
                     </div>
                 </div>
-                <div class="dash-insight">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                    <span><strong>Insight found:</strong> Retail product margins are 42% vs 82% for injectables. Shifting 10% of retail shelf space to injectable upsells could add $8,200/mo in profit.</span>
+
+                <!-- KPI Strip -->
+                <div class="dash-spa-body">
+                    <div class="dash-kpi-strip">
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(61,139,110,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d8b6e" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-val">$127,400</span><span class="spa-kpi-badge up">+12.3%</span></div>
+                        </div>
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(96,124,117,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#607c75" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Avg Service Margin</span><span class="spa-kpi-val">64.2%</span><span class="spa-kpi-badge up">+3.1 pts</span></div>
+                        </div>
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(196,147,59,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4933b" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Gift Card Liability</span><span class="spa-kpi-val">$18,200</span><span class="spa-kpi-badge amber">Unredeemed</span></div>
+                        </div>
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(184,90,90,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b85a5a" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Provider Utilization</span><span class="spa-kpi-val">73%</span><span class="spa-kpi-badge amber">Target: 80%</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Two Column: Revenue Streams + Marketing ROAS -->
+                    <div class="dash-two-col">
+                        <div class="dash-panel">
+                            <div class="dash-panel-head">
+                                <h4>Revenue Streams</h4>
+                                <span class="dash-panel-tag">Where your money comes from</span>
+                            </div>
+                            <div class="dash-streams">
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#3d8b6e"></span><span>Injectables & Fillers</span></div><div class="dash-stream-bar"><div style="width:38%;background:linear-gradient(90deg,#3d8b6e,#5aab8d)"></div></div><span class="dash-stream-val">$48,400</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#607c75"></span><span>Facials & Skin Care</span></div><div class="dash-stream-bar"><div style="width:24%;background:linear-gradient(90deg,#607c75,#7a9d94)"></div></div><span class="dash-stream-val">$30,600</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#c4a18b"></span><span>Body Treatments</span></div><div class="dash-stream-bar"><div style="width:18%;background:linear-gradient(90deg,#c4a18b,#d4b9a7)"></div></div><span class="dash-stream-val">$22,900</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#c4933b"></span><span>Gift Cards & Packages</span></div><div class="dash-stream-bar"><div style="width:12%;background:linear-gradient(90deg,#c4933b,#dab15e)"></div></div><span class="dash-stream-val">$15,300</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#b85a5a"></span><span>Retail Products</span></div><div class="dash-stream-bar"><div style="width:8%;background:linear-gradient(90deg,#b85a5a,#d07878)"></div></div><span class="dash-stream-val">$10,200</span></div>
+                            </div>
+                        </div>
+                        <div class="dash-panel">
+                            <div class="dash-panel-head">
+                                <h4>Marketing ROI by Channel</h4>
+                                <span class="dash-panel-tag">ROAS — Where your ad dollars go</span>
+                            </div>
+                            <div class="dash-roas-table">
+                                <div class="dash-roas-head"><span>Channel</span><span>Spend</span><span>ROAS</span></div>
+                                <div class="dash-roas-row"><span>Referral Program</span><span>$600</span><span class="dash-roas-pill high">75.2x</span></div>
+                                <div class="dash-roas-row"><span>Local SEO / Organic</span><span>$800</span><span class="dash-roas-pill high">68.8x</span></div>
+                                <div class="dash-roas-row"><span>Instagram / Meta Ads</span><span>$2,400</span><span class="dash-roas-pill high">24.0x</span></div>
+                                <div class="dash-roas-row"><span>Google Ads (Search)</span><span>$1,800</span><span class="dash-roas-pill mid">21.8x</span></div>
+                                <div class="dash-roas-row danger"><span>Groupon</span><span>$1,200</span><span class="dash-roas-pill low">-2.4x</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insight Callout -->
+                    <div class="dash-spa-insight">
+                        <div class="dash-insight-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4933b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+                        <div>
+                            <strong>CFO Insight:</strong> Groupon is generating 95 "clients" at a <em>negative</em> ROAS of -2.4x with only a 6% rebook rate. That's costing $34K/year in lost margin. Redirecting that $1,200/mo to your referral program (75.2x ROAS, 78% rebook rate) would generate an estimated <strong>$90K+ in lifetime value annually</strong>.
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Dashboard 2: Restaurant -->
-            <div class="dash-card">
-                <div class="dash-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg> Restaurant & Cafe Vertical</div>
-                <div class="dash-mockup">
-                    <div class="dash-header-bar">
-                        <span class="dash-dot" style="background:#ef4444"></span>
-                        <span class="dash-dot" style="background:#f59e0b"></span>
-                        <span class="dash-dot" style="background:#22c55e"></span>
-                        <span style="font-size:11px;color:var(--gray-400);margin-left:8px">Rosemount Cafe — Menu Margin Review</span>
+            <!-- ====== DASHBOARD 2: Restaurant ====== -->
+            <div class="dash-card restaurant">
+                <div class="dash-spa-header rest-header">
+                    <div class="dash-spa-top">
+                        <div class="dash-brand-badge"><span class="dash-brand-dot"></span> Breeze Financials</div>
+                        <span class="dash-date">March 2026</span>
                     </div>
-                    <div class="dash-body">
-                        <div class="dash-kpi-row">
-                            <div class="dash-kpi"><span class="dash-kpi-label">Food Cost %</span><span class="dash-kpi-val">31.4%</span><span class="dash-kpi-delta down">Target: 28%</span></div>
-                            <div class="dash-kpi"><span class="dash-kpi-label">Avg Plate Margin</span><span class="dash-kpi-val">$8.20</span><span class="dash-kpi-delta up">+$1.40 after repricing</span></div>
-                            <div class="dash-kpi"><span class="dash-kpi-label">Menu Items Reviewed</span><span class="dash-kpi-val">47</span><span class="dash-kpi-delta">12 need repricing</span></div>
-                        </div>
-                        <div class="dash-chart-area">
-                            <div class="dash-chart">
-                                <div class="dash-chart-title">Top Profit Contributors</div>
-                                <div class="dash-bars">
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Espresso Drinks</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:88%"></div></div><span class="dash-bar-val">88%</span></div>
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Brunch Mains</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:65%"></div></div><span class="dash-bar-val">65%</span></div>
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Appetizers</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:52%"></div></div><span class="dash-bar-val">52%</span></div>
-                                    <div class="dash-bar-row"><span class="dash-bar-label">Desserts</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width:35%;background:var(--teal-300)"></div></div><span class="dash-bar-val">35%</span></div>
-                                </div>
-                            </div>
-                            <div class="dash-chart">
-                                <div class="dash-chart-title">Monthly Revenue vs Target</div>
-                                <div class="dash-mini-line">
-                                    <svg viewBox="0 0 200 60" preserveAspectRatio="none"><polyline points="0,45 33,40 66,48 100,35 133,30 166,25 200,20" fill="none" stroke="var(--teal-500)" stroke-width="2.5"/><polyline points="0,32 200,32" fill="none" stroke="var(--gray-300)" stroke-width="1" stroke-dasharray="4,4"/><polyline points="0,45 33,40 66,48 100,35 133,30 166,25 200,20 200,60 0,60" fill="url(#tealGrad2)" opacity=".15"/><defs><linearGradient id="tealGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--teal-500)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs></svg>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="dash-spa-title">
+                        <span class="dash-leaf">&#9749; Restaurant & Cafe</span>
+                        <h3>Menu Margin Review</h3>
+                        <p>Rosemount Cafe — Item-Level Profitability Analysis</p>
                     </div>
                 </div>
-                <div class="dash-insight">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                    <span><strong>Insight found:</strong> 12 menu items are priced below cost target. Repricing these 12 items alone would recover $3,400/mo in lost margin — without changing a single recipe.</span>
+
+                <div class="dash-spa-body">
+                    <div class="dash-kpi-strip">
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(51,97,81,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#336151" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-val">$84,200</span><span class="spa-kpi-badge up">+8.1%</span></div>
+                        </div>
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(184,90,90,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b85a5a" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Food Cost %</span><span class="spa-kpi-val">31.4%</span><span class="spa-kpi-badge amber">Target: 28%</span></div>
+                        </div>
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(61,139,110,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d8b6e" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Avg Plate Margin</span><span class="spa-kpi-val">$8.20</span><span class="spa-kpi-badge up">+$1.40</span></div>
+                        </div>
+                        <div class="dash-kpi spa-kpi">
+                            <span class="dash-kpi-icon" style="background:rgba(196,147,59,.08)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4933b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                            </span>
+                            <div><span class="spa-kpi-label">Items Reviewed</span><span class="spa-kpi-val">47</span><span class="spa-kpi-badge amber">12 need repricing</span></div>
+                        </div>
+                    </div>
+
+                    <div class="dash-two-col">
+                        <div class="dash-panel">
+                            <div class="dash-panel-head"><h4>Top Profit Contributors</h4><span class="dash-panel-tag">Highest margin items</span></div>
+                            <div class="dash-streams">
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#3d8b6e"></span><span>Espresso Drinks</span></div><div class="dash-stream-bar"><div style="width:88%;background:linear-gradient(90deg,#3d8b6e,#5aab8d)"></div></div><span class="dash-stream-val">88%</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#607c75"></span><span>Brunch Mains</span></div><div class="dash-stream-bar"><div style="width:65%;background:linear-gradient(90deg,#607c75,#7a9d94)"></div></div><span class="dash-stream-val">65%</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#c4a18b"></span><span>Appetizers</span></div><div class="dash-stream-bar"><div style="width:52%;background:linear-gradient(90deg,#c4a18b,#d4b9a7)"></div></div><span class="dash-stream-val">52%</span></div>
+                                <div class="dash-stream"><div class="dash-stream-info"><span class="dash-stream-dot" style="background:#b85a5a"></span><span>Desserts</span></div><div class="dash-stream-bar"><div style="width:35%;background:linear-gradient(90deg,#b85a5a,#d07878)"></div></div><span class="dash-stream-val">35%</span></div>
+                            </div>
+                        </div>
+                        <div class="dash-panel">
+                            <div class="dash-panel-head"><h4>Items Flagged for Repricing</h4><span class="dash-panel-tag">Below target margin</span></div>
+                            <div class="dash-roas-table">
+                                <div class="dash-roas-head"><span>Item</span><span>Current</span><span>Margin</span></div>
+                                <div class="dash-roas-row danger"><span>Smoked Salmon Benedict</span><span>$18.00</span><span class="dash-roas-pill low">22%</span></div>
+                                <div class="dash-roas-row danger"><span>Wagyu Burger</span><span>$24.00</span><span class="dash-roas-pill low">19%</span></div>
+                                <div class="dash-roas-row"><span>Truffle Fries</span><span>$12.00</span><span class="dash-roas-pill mid">31%</span></div>
+                                <div class="dash-roas-row"><span>Lobster Mac & Cheese</span><span>$22.00</span><span class="dash-roas-pill mid">28%</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-spa-insight">
+                        <div class="dash-insight-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3d8b6e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+                        <div>
+                            <strong>CFO Insight:</strong> 12 menu items are priced below the 28% food cost target. Repricing these 12 items alone would recover <strong>$3,400/mo in lost margin</strong> — that's $40,800/year without changing a single recipe or supplier. Espresso drinks at 88% margin should be featured more prominently on the menu.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div style="text-align:center;margin-top:32px">
-            <p style="font-size:15px;color:var(--gray-600);margin-bottom:16px">These are synthetic previews. Your dashboard will be built with <strong>your actual numbers</strong>.</p>
+        <div style="text-align:center;margin-top:40px">
+            <p style="font-size:15px;color:var(--gray-600);margin-bottom:16px">These are synthetic previews. Your dashboard is built with <strong>your actual numbers</strong>.</p>
             <a href="#book" class="btn-pill">See This With Your Numbers &rarr;</a>
         </div>
     </div>
