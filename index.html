@@ -23,6 +23,9 @@
     <!-- Calendly -->
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -93,91 +96,135 @@
             <p>Not just spreadsheets — live financial dashboards that show you exactly where your money goes, which services print profit, and where your marketing dollars work hardest.</p>
         </div>
 
+        <!-- Dashboard Tab Toggle -->
+        <div class="dash-tabs">
+            <button class="dash-tab active" onclick="switchDash('spa')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Day Spa</button>
+            <button class="dash-tab" onclick="switchDash('clinic')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Med Spa & Clinic</button>
+            <button class="dash-tab" onclick="switchDash('resto')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg> Restaurant</button>
+        </div>
+
         <div class="dash-showcase">
-            <!-- ====== DASHBOARD 1: Spa & Wellness ====== -->
-            <div class="dash-card spa">
+            <!-- ====== DAY SPA DASHBOARD ====== -->
+            <div class="dash-card dash-view active" id="dash-spa">
                 <div class="dash-spa-header">
                     <div class="dash-spa-top"><div class="dash-brand-badge"><span class="dash-brand-dot"></span> Breeze Financials</div><span class="dash-date">March 2026</span></div>
-                    <div class="dash-spa-title"><span class="dash-leaf">&#10022; Spa & Med Spa</span><h3>Financial Command Center</h3><p>Radiant Med Spa — Service Profitability & Marketing ROI</p></div>
+                    <div class="dash-spa-title"><span class="dash-leaf">&#10022; Day Spa Dashboard</span><h3>Serenity Day Spa</h3><p>Service Profitability &bull; Revenue Streams &bull; Gift Card Tracking</p></div>
                 </div>
                 <div class="dash-spa-body">
-                    <!-- KPIs with sparklines -->
                     <div class="dash-kpi-strip">
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-badge up">+12.3%</span></div><span class="spa-kpi-val">$127,400</span><svg class="kpi-spark" viewBox="0 0 80 24"><defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d8b6e" stop-opacity=".3"/><stop offset="100%" stop-color="#3d8b6e" stop-opacity="0"/></linearGradient></defs><path d="M0,20 L13,16 L26,18 L40,12 L53,8 L66,6 L80,2 L80,24 L0,24Z" fill="url(#sg1)"/><polyline points="0,20 13,16 26,18 40,12 53,8 66,6 80,2" fill="none" stroke="#3d8b6e" stroke-width="2"/></svg></div>
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Avg Service Margin</span><span class="spa-kpi-badge up">+3.1 pts</span></div><span class="spa-kpi-val">64.2%</span><svg class="kpi-spark" viewBox="0 0 80 24"><defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#607c75" stop-opacity=".3"/><stop offset="100%" stop-color="#607c75" stop-opacity="0"/></linearGradient></defs><path d="M0,18 L13,15 L26,16 L40,12 L53,10 L66,8 L80,5 L80,24 L0,24Z" fill="url(#sg2)"/><polyline points="0,18 13,15 26,16 40,12 53,10 66,8 80,5" fill="none" stroke="#607c75" stroke-width="2"/></svg></div>
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Gift Card Liability</span><span class="spa-kpi-badge amber">Risk</span></div><span class="spa-kpi-val">$18,200</span><svg class="kpi-spark" viewBox="0 0 80 24"><defs><linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4933b" stop-opacity=".3"/><stop offset="100%" stop-color="#c4933b" stop-opacity="0"/></linearGradient></defs><path d="M0,14 L13,12 L26,10 L40,14 L53,16 L66,18 L80,20 L80,24 L0,24Z" fill="url(#sg3)"/><polyline points="0,14 13,12 26,10 40,14 53,16 66,18 80,20" fill="none" stroke="#c4933b" stroke-width="2"/></svg></div>
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Provider Utilization</span><span class="spa-kpi-badge amber">Target: 80%</span></div><span class="spa-kpi-val">73%</span><div class="kpi-ring-wrap"><svg class="kpi-ring" viewBox="0 0 36 36"><path d="M18 2.0845a15.9155 15.9155 0 0 1 0 31.831a15.9155 15.9155 0 0 1 0-31.831" fill="none" stroke="rgba(96,124,117,.1)" stroke-width="3"/><path d="M18 2.0845a15.9155 15.9155 0 0 1 0 31.831a15.9155 15.9155 0 0 1 0-31.831" fill="none" stroke="#607c75" stroke-width="3" stroke-dasharray="73, 100" stroke-linecap="round"/></svg></div></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-badge up">+9.4%</span></div><span class="spa-kpi-val pf">$86,200</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="spg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d8b6e" stop-opacity=".25"/><stop offset="100%" stop-color="#3d8b6e" stop-opacity="0"/></linearGradient></defs><path d="M0,22 L16,18 L33,20 L50,14 L66,10 L83,8 L100,4 L100,28 L0,28Z" fill="url(#spg1)"/><polyline points="0,22 16,18 33,20 50,14 66,10 83,8 100,4" fill="none" stroke="#3d8b6e" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="4" r="3" fill="#3d8b6e"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Avg Service Margin</span><span class="spa-kpi-badge up">+4.2 pts</span></div><span class="spa-kpi-val pf">58.1%</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="spg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#607c75" stop-opacity=".25"/><stop offset="100%" stop-color="#607c75" stop-opacity="0"/></linearGradient></defs><path d="M0,20 L16,18 L33,19 L50,14 L66,12 L83,9 L100,6 L100,28 L0,28Z" fill="url(#spg2)"/><polyline points="0,20 16,18 33,19 50,14 66,12 83,9 100,6" fill="none" stroke="#607c75" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="6" r="3" fill="#607c75"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Gift Card Liability</span><span class="spa-kpi-badge amber">Unredeemed</span></div><span class="spa-kpi-val pf">$24,600</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="spg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4933b" stop-opacity=".25"/><stop offset="100%" stop-color="#c4933b" stop-opacity="0"/></linearGradient></defs><path d="M0,16 L16,12 L33,10 L50,14 L66,18 L83,20 L100,22 L100,28 L0,28Z" fill="url(#spg3)"/><polyline points="0,16 16,12 33,10 50,14 66,18 83,20 100,22" fill="none" stroke="#c4933b" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="22" r="3" fill="#c4933b"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Client Retention</span><span class="spa-kpi-badge up">Above avg</span></div><span class="spa-kpi-val pf">72%</span><div class="kpi-ring-wrap"><svg class="kpi-ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(96,124,117,.08)" stroke-width="3.5"/><circle cx="18" cy="18" r="15.9" fill="none" stroke="url(#ringGrad)" stroke-width="3.5" stroke-dasharray="72, 100" stroke-linecap="round"/><defs><linearGradient id="ringGrad"><stop offset="0%" stop-color="#3d8b6e"/><stop offset="100%" stop-color="#607c75"/></linearGradient></defs></svg></div></div>
                     </div>
-                    <!-- Revenue Donut + Streams -->
+                    <!-- Profit per Hour Horizontal Bars + Donut -->
                     <div class="dash-three-col">
+                        <div class="dash-panel" style="grid-column:span 2">
+                            <div class="dash-panel-head"><h4>Profit per Treatment Hour</h4><span class="dash-panel-tag">Which services are most valuable per hour of room time?</span></div>
+                            <div class="hbar-chart">
+                                <div class="hbar"><span class="hbar-label">Hot Stone Massage</span><div class="hbar-track"><div class="hbar-fill" style="width:82%;background:linear-gradient(90deg,#4a6159,#7a9d94)"></div></div><span class="hbar-val pf">$215/hr</span></div>
+                                <div class="hbar"><span class="hbar-label">Aromatherapy Facial</span><div class="hbar-track"><div class="hbar-fill" style="width:72%;background:linear-gradient(90deg,#4a6159,#7a9d94)"></div></div><span class="hbar-val pf">$189/hr</span></div>
+                                <div class="hbar"><span class="hbar-label">Body Wrap</span><div class="hbar-track"><div class="hbar-fill" style="width:58%;background:linear-gradient(90deg,#607c75,#7a9d94)"></div></div><span class="hbar-val pf">$152/hr</span></div>
+                                <div class="hbar"><span class="hbar-label">Mani/Pedi Combo</span><div class="hbar-track"><div class="hbar-fill" style="width:45%;background:linear-gradient(90deg,#c4a18b,#d4b9a7)"></div></div><span class="hbar-val pf">$118/hr</span></div>
+                                <div class="hbar"><span class="hbar-label">Express Facial</span><div class="hbar-track"><div class="hbar-fill" style="width:30%;background:linear-gradient(90deg,#c4933b,#dab15e)"></div></div><span class="hbar-val pf">$78/hr</span></div>
+                                <div class="hbar"><span class="hbar-label">Groupon Massage</span><div class="hbar-track"><div class="hbar-fill rose" style="width:15%;background:linear-gradient(90deg,#b85a5a,#d07878)"></div></div><span class="hbar-val pf" style="color:#b85a5a">-$22/hr</span></div>
+                            </div>
+                        </div>
                         <div class="dash-panel donut-panel">
                             <div class="dash-panel-head"><h4>Revenue Mix</h4></div>
-                            <div class="donut-wrap">
-                                <svg viewBox="0 0 42 42" class="donut-chart"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#3d8b6e" stroke-width="5" stroke-dasharray="38 62" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#607c75" stroke-width="5" stroke-dasharray="24 76" stroke-dashoffset="87"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4a18b" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="63"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4933b" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="45"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#b85a5a" stroke-width="5" stroke-dasharray="8 92" stroke-dashoffset="33"/></svg>
-                                <div class="donut-center"><span class="donut-val">$127K</span><span class="donut-sub">total</span></div>
-                            </div>
-                            <div class="donut-legend">
-                                <span><i style="background:#3d8b6e"></i>Injectables 38%</span>
-                                <span><i style="background:#607c75"></i>Facials 24%</span>
-                                <span><i style="background:#c4a18b"></i>Body 18%</span>
-                                <span><i style="background:#c4933b"></i>Gift Cards 12%</span>
-                                <span><i style="background:#b85a5a"></i>Retail 8%</span>
-                            </div>
-                        </div>
-                        <div class="dash-panel" style="grid-column:span 2">
-                            <div class="dash-panel-head"><h4>Marketing ROI by Channel</h4><span class="dash-panel-tag">ROAS — Are your ad dollars working?</span></div>
-                            <div class="dash-roas-table">
-                                <div class="dash-roas-head"><span>Channel</span><span>Spend</span><span>New Clients</span><span>Rebook</span><span>ROAS</span></div>
-                                <div class="dash-roas-row"><span>Referral Program</span><span>$600</span><span>11</span><span class="roas-rebook high">78%</span><span class="dash-roas-pill high">75.2x</span></div>
-                                <div class="dash-roas-row"><span>Local SEO / Organic</span><span>$800</span><span>22</span><span class="roas-rebook high">52%</span><span class="dash-roas-pill high">68.8x</span></div>
-                                <div class="dash-roas-row"><span>Instagram / Meta</span><span>$2,400</span><span>18</span><span class="roas-rebook high">61%</span><span class="dash-roas-pill high">24.0x</span></div>
-                                <div class="dash-roas-row"><span>Google Ads</span><span>$1,800</span><span>14</span><span class="roas-rebook mid">55%</span><span class="dash-roas-pill mid">21.8x</span></div>
-                                <div class="dash-roas-row danger"><span>Groupon</span><span>$1,200</span><span>95</span><span class="roas-rebook low">6%</span><span class="dash-roas-pill low">-2.4x</span></div>
-                            </div>
+                            <div class="donut-wrap"><svg viewBox="0 0 42 42" class="donut-chart"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#607c75" stroke-width="5" stroke-dasharray="42 58" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#3d8b6e" stroke-width="5" stroke-dasharray="22 78" stroke-dashoffset="83"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4a18b" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="61"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#c4933b" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="43"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#b85a5a" stroke-width="5" stroke-dasharray="6 94" stroke-dashoffset="31"/></svg><div class="donut-center"><span class="donut-val pf">$86K</span><span class="donut-sub">monthly</span></div></div>
+                            <div class="donut-legend"><span><i style="background:#607c75"></i>Massage 42%</span><span><i style="background:#3d8b6e"></i>Facials 22%</span><span><i style="background:#c4a18b"></i>Body 18%</span><span><i style="background:#c4933b"></i>Gift Cards 12%</span><span><i style="background:#b85a5a"></i>Retail 6%</span></div>
                         </div>
                     </div>
-                    <div class="dash-spa-insight"><div class="dash-insight-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4933b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><div><strong>CFO Insight:</strong> Groupon generates 95 "clients" at a <em>negative</em> -2.4x ROAS with only 6% rebook rate — costing $34K/year. Redirecting that $1,200/mo to referrals (75.2x ROAS, 78% rebook) would generate <strong>$90K+ in lifetime value annually</strong>.</div></div>
+                    <!-- Insight -->
+                    <div class="dash-insight-rich"><div class="dash-insight-bar sage"></div><div class="dash-insight-content"><span class="dash-insight-label">The Insight Your P&L Won't Show You</span><div class="dash-insight-stats"><div><span class="pf">$24,600</span><small>in gift cards sold but unredeemed — booked as revenue, but it's a future liability</small></div><div><span class="pf" style="color:#b85a5a">-$4,200</span><small>lost monthly on Groupon services — 95 bookings generating negative margin</small></div><div><span class="pf" style="color:#3d8b6e">$118K</span><small>true recognized revenue after adjusting for deferred income</small></div></div></div></div>
                 </div>
             </div>
 
-            <!-- ====== DASHBOARD 2: Restaurant ====== -->
-            <div class="dash-card restaurant">
-                <div class="dash-spa-header rest-header">
-                    <div class="dash-spa-top"><div class="dash-brand-badge"><span class="dash-brand-dot"></span> Breeze Financials</div><span class="dash-date">March 2026</span></div>
-                    <div class="dash-spa-title"><span class="dash-leaf">&#9749; Restaurant & Cafe</span><h3>Menu Margin Review</h3><p>Rosemount Cafe — Item-Level Profitability Analysis</p></div>
+            <!-- ====== MED SPA / CLINIC DASHBOARD ====== -->
+            <div class="dash-card dash-view" id="dash-clinic">
+                <div class="dash-spa-header" style="background:linear-gradient(135deg, #3a4a5c 0%, #4a6178 50%, #6889a6 100%)">
+                    <div class="dash-spa-top"><div class="dash-brand-badge"><span class="dash-brand-dot" style="background:#8bb8d4"></span> Breeze Financials</div><span class="dash-date">March 2026</span></div>
+                    <div class="dash-spa-title"><span class="dash-leaf" style="color:#8bb8d4">&#9879; Med Spa & Clinic</span><h3>Radiant Med Spa & Wellness</h3><p>Provider Performance &bull; Treatment Margins &bull; Marketing ROAS</p></div>
                 </div>
                 <div class="dash-spa-body">
-                    <!-- KPIs with visual gauges -->
                     <div class="dash-kpi-strip">
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-badge up">+8.1%</span></div><span class="spa-kpi-val">$84,200</span><svg class="kpi-spark" viewBox="0 0 80 24"><defs><linearGradient id="rg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#336151" stop-opacity=".3"/><stop offset="100%" stop-color="#336151" stop-opacity="0"/></linearGradient></defs><path d="M0,20 L11,18 L22,22 L33,16 L44,14 L55,12 L66,8 L80,4 L80,24 L0,24Z" fill="url(#rg1)"/><polyline points="0,20 11,18 22,22 33,16 44,14 55,12 66,8 80,4" fill="none" stroke="#336151" stroke-width="2"/></svg></div>
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Food Cost %</span><span class="spa-kpi-badge amber">Above target</span></div><span class="spa-kpi-val">31.4%</span><div class="kpi-gauge"><div class="kpi-gauge-track"><div class="kpi-gauge-fill" style="width:31.4%;background:linear-gradient(90deg,#3d8b6e,#c4933b,#b85a5a)"></div><div class="kpi-gauge-target" style="left:28%"></div></div><div class="kpi-gauge-labels"><span>0%</span><span style="color:#b85a5a">Target 28%</span><span>50%</span></div></div></div>
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Avg Plate Margin</span><span class="spa-kpi-badge up">+$1.40</span></div><span class="spa-kpi-val">$8.20</span><svg class="kpi-spark" viewBox="0 0 80 24"><defs><linearGradient id="rg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d8b6e" stop-opacity=".3"/><stop offset="100%" stop-color="#3d8b6e" stop-opacity="0"/></linearGradient></defs><path d="M0,18 L13,20 L26,16 L40,14 L53,10 L66,8 L80,6 L80,24 L0,24Z" fill="url(#rg2)"/><polyline points="0,18 13,20 26,16 40,14 53,10 66,8 80,6" fill="none" stroke="#3d8b6e" stroke-width="2"/></svg></div>
-                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Items Reviewed</span><span class="spa-kpi-badge amber">12 flagged</span></div><span class="spa-kpi-val">47</span><div class="kpi-donut-mini"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="rgba(51,97,81,.08)" stroke-width="4"/><circle cx="18" cy="18" r="14" fill="none" stroke="#3d8b6e" stroke-width="4" stroke-dasharray="74.5 25.5" stroke-dashoffset="25" stroke-linecap="round"/><circle cx="18" cy="18" r="14" fill="none" stroke="#b85a5a" stroke-width="4" stroke-dasharray="25.5 74.5" stroke-dashoffset="50.5" stroke-linecap="round"/></svg><div class="kpi-donut-label"><span style="color:#3d8b6e">35 ok</span><span style="color:#b85a5a">12 flag</span></div></div></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-badge up">+12.3%</span></div><span class="spa-kpi-val pf">$165,400</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="mg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4a6178" stop-opacity=".3"/><stop offset="100%" stop-color="#4a6178" stop-opacity="0"/></linearGradient></defs><path d="M0,24 L16,20 L33,22 L50,16 L66,10 L83,6 L100,2 L100,28 L0,28Z" fill="url(#mg1)"/><polyline points="0,24 16,20 33,22 50,16 66,10 83,6 100,2" fill="none" stroke="#4a6178" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="2" r="3" fill="#4a6178"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">True Net Margin</span><span class="spa-kpi-badge up">+3.8 pts</span></div><span class="spa-kpi-val pf">42.1%</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="mg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d8b6e" stop-opacity=".25"/><stop offset="100%" stop-color="#3d8b6e" stop-opacity="0"/></linearGradient></defs><path d="M0,22 L16,20 L33,18 L50,16 L66,12 L83,10 L100,6 L100,28 L0,28Z" fill="url(#mg2)"/><polyline points="0,22 16,20 33,18 50,16 66,12 83,10 100,6" fill="none" stroke="#3d8b6e" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="6" r="3" fill="#3d8b6e"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Avg Rev / Treatment</span><span class="spa-kpi-badge up">+$18</span></div><span class="spa-kpi-val pf">$284</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="mg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#607c75" stop-opacity=".2"/><stop offset="100%" stop-color="#607c75" stop-opacity="0"/></linearGradient></defs><path d="M0,20 L16,22 L33,18 L50,16 L66,14 L83,10 L100,8 L100,28 L0,28Z" fill="url(#mg3)"/><polyline points="0,20 16,22 33,18 50,16 66,14 83,10 100,8" fill="none" stroke="#607c75" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="8" r="3" fill="#607c75"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Provider Utilization</span><span class="spa-kpi-badge amber">Target: 80%</span></div><span class="spa-kpi-val pf">73%</span><div class="kpi-ring-wrap"><svg class="kpi-ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(74,97,120,.08)" stroke-width="3.5"/><circle cx="18" cy="18" r="15.9" fill="none" stroke="url(#ringGrad2)" stroke-width="3.5" stroke-dasharray="73, 100" stroke-linecap="round"/><defs><linearGradient id="ringGrad2"><stop offset="0%" stop-color="#4a6178"/><stop offset="100%" stop-color="#6889a6"/></linearGradient></defs></svg></div></div>
                     </div>
-                    <!-- Stacked category chart + repricing table -->
+                    <!-- Service Profitability Table -->
+                    <div class="dash-panel" style="margin-bottom:20px;overflow-x:auto">
+                        <div class="dash-panel-head"><h4>Service-Level Profitability</h4><span class="dash-panel-tag">True margin after labor, product & overhead</span></div>
+                        <table class="profit-tbl">
+                            <thead><tr><th>Service</th><th>Price</th><th>Labor</th><th>Product</th><th>OH</th><th>Profit</th><th>Margin</th><th>Vol</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Dermal Filler</strong><br><small>Injectable</small></td><td>$650</td><td>$85</td><td>$220</td><td>$35</td><td class="pos">$310</td><td><span class="mpill high">47.7%</span></td><td>38</td></tr>
+                                <tr><td><strong>Laser Hair Removal</strong><br><small>Laser</small></td><td>$350</td><td>$55</td><td>$8</td><td>$45</td><td class="pos">$242</td><td><span class="mpill high">69.1%</span></td><td>28</td></tr>
+                                <tr><td><strong>HydraFacial</strong><br><small>Facial Treatment</small></td><td>$225</td><td>$52</td><td>$38</td><td>$28</td><td class="pos">$107</td><td><span class="mpill high">47.6%</span></td><td>85</td></tr>
+                                <tr><td><strong>Botox (per unit)</strong><br><small>Injectable</small></td><td>$14</td><td>$2.10</td><td>$5.80</td><td>$1.20</td><td class="pos">$4.90</td><td><span class="mpill mid">35.0%</span></td><td>1,840</td></tr>
+                                <tr class="danger-row"><td><strong>Groupon Facial</strong><br><small>Promotional</small></td><td>$49</td><td>$42</td><td>$15</td><td>$22</td><td class="neg">-$30</td><td><span class="mpill low">-61%</span></td><td>95</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Provider + Marketing side by side -->
                     <div class="dash-two-col">
                         <div class="dash-panel">
-                            <div class="dash-panel-head"><h4>Margin by Category</h4><span class="dash-panel-tag">Revenue vs food cost vs labor</span></div>
+                            <div class="dash-panel-head"><h4>Provider Scorecard</h4><span class="dash-panel-tag">Utilization &bull; Rebook rate &bull; Revenue/hr</span></div>
+                            <div class="provider-bars">
+                                <div class="prov"><span class="prov-name">Dr. Patel <small>MD</small></span><div class="prov-bar-track"><div class="prov-bar" style="width:88%;background:linear-gradient(90deg,#3d8b6e,#5aab8d)"></div></div><span class="prov-stat">88% &bull; $390/hr</span></div>
+                                <div class="prov"><span class="prov-name">Sarah K. <small>RN</small></span><div class="prov-bar-track"><div class="prov-bar" style="width:82%;background:linear-gradient(90deg,#4a6178,#6889a6)"></div></div><span class="prov-stat">82% &bull; $298/hr</span></div>
+                                <div class="prov"><span class="prov-name">Maria L. <small>Sr. Esth</small></span><div class="prov-bar-track"><div class="prov-bar" style="width:74%;background:linear-gradient(90deg,#607c75,#7a9d94)"></div></div><span class="prov-stat">74% &bull; $179/hr</span></div>
+                                <div class="prov"><span class="prov-name">Tanya R. <small>Esth</small></span><div class="prov-bar-track"><div class="prov-bar" style="width:68%;background:linear-gradient(90deg,#c4933b,#dab15e)"></div></div><span class="prov-stat">68% &bull; $152/hr</span></div>
+                                <div class="prov"><span class="prov-name">Jess P. <small>Jr. Esth</small></span><div class="prov-bar-track"><div class="prov-bar" style="width:52%;background:linear-gradient(90deg,#b85a5a,#d07878)"></div></div><span class="prov-stat">52% &bull; $95/hr</span></div>
+                            </div>
+                        </div>
+                        <div class="dash-panel">
+                            <div class="dash-panel-head"><h4>Marketing ROAS</h4><span class="dash-panel-tag">Spend vs lifetime return</span></div>
+                            <div class="roas-visual">
+                                <div class="roas-bar-pair"><span class="roas-ch">Referral</span><div class="roas-bars"><div class="roas-spend" style="width:8%">$600</div><div class="roas-return" style="width:92%">$45K LTV</div></div><span class="dash-roas-pill high">75x</span></div>
+                                <div class="roas-bar-pair"><span class="roas-ch">SEO</span><div class="roas-bars"><div class="roas-spend" style="width:10%">$800</div><div class="roas-return" style="width:90%">$55K LTV</div></div><span class="dash-roas-pill high">69x</span></div>
+                                <div class="roas-bar-pair"><span class="roas-ch">Meta Ads</span><div class="roas-bars"><div class="roas-spend" style="width:18%">$2.4K</div><div class="roas-return" style="width:82%">$58K LTV</div></div><span class="dash-roas-pill high">24x</span></div>
+                                <div class="roas-bar-pair"><span class="roas-ch">Google</span><div class="roas-bars"><div class="roas-spend" style="width:20%">$1.8K</div><div class="roas-return" style="width:80%">$39K LTV</div></div><span class="dash-roas-pill mid">22x</span></div>
+                                <div class="roas-bar-pair danger"><span class="roas-ch">Groupon</span><div class="roas-bars"><div class="roas-spend" style="width:85%">$1.2K</div><div class="roas-return" style="width:15%;background:#b85a5a">$5.9K</div></div><span class="dash-roas-pill low">-2.4x</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-insight-rich"><div class="dash-insight-bar rose"></div><div class="dash-insight-content"><span class="dash-insight-label">CFO Alert: Revenue Leaks Identified</span><div class="dash-insight-stats"><div><span class="pf" style="color:#b85a5a">-$2,850/mo</span><small>Groupon at -61% margin with 6% rebook — paying to lose money</small></div><div><span class="pf">$90K+</span><small>estimated annual LTV if Groupon budget redirected to referral program</small></div><div><span class="pf" style="color:#c4933b">$42,800</span><small>in outstanding gift cards — a liability currently booked as revenue</small></div></div></div></div>
+                </div>
+            </div>
+
+            <!-- ====== RESTAURANT DASHBOARD ====== -->
+            <div class="dash-card dash-view" id="dash-resto">
+                <div class="dash-spa-header rest-header">
+                    <div class="dash-spa-top"><div class="dash-brand-badge"><span class="dash-brand-dot"></span> Breeze Financials</div><span class="dash-date">March 2026</span></div>
+                    <div class="dash-spa-title"><span class="dash-leaf">&#9749; Restaurant & Cafe</span><h3>Rosemount Cafe</h3><p>Menu Profitability &bull; Food Cost Analysis &bull; Category Margins</p></div>
+                </div>
+                <div class="dash-spa-body">
+                    <div class="dash-kpi-strip">
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Monthly Revenue</span><span class="spa-kpi-badge up">+8.1%</span></div><span class="spa-kpi-val pf">$84,200</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="rsg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#336151" stop-opacity=".3"/><stop offset="100%" stop-color="#336151" stop-opacity="0"/></linearGradient></defs><path d="M0,22 L14,20 L28,24 L42,18 L57,14 L71,10 L85,6 L100,4 L100,28 L0,28Z" fill="url(#rsg1)"/><polyline points="0,22 14,20 28,24 42,18 57,14 71,10 85,6 100,4" fill="none" stroke="#336151" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="4" r="3" fill="#336151"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Food Cost %</span><span class="spa-kpi-badge amber">Above target</span></div><span class="spa-kpi-val pf">31.4%</span><div class="kpi-gauge"><div class="kpi-gauge-track"><div class="kpi-gauge-fill" style="width:62.8%;background:linear-gradient(90deg,#3d8b6e,#c4933b 56%,#b85a5a)"></div><div class="kpi-gauge-target" style="left:56%"></div></div><div class="kpi-gauge-labels"><span>0%</span><span style="color:#b85a5a;font-weight:600">28% target</span><span>50%</span></div></div></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Avg Plate Margin</span><span class="spa-kpi-badge up">+$1.40</span></div><span class="spa-kpi-val pf">$8.20</span><svg class="kpi-spark" viewBox="0 0 100 28"><defs><linearGradient id="rsg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d8b6e" stop-opacity=".25"/><stop offset="100%" stop-color="#3d8b6e" stop-opacity="0"/></linearGradient></defs><path d="M0,20 L16,22 L33,18 L50,14 L66,10 L83,8 L100,6 L100,28 L0,28Z" fill="url(#rsg2)"/><polyline points="0,20 16,22 33,18 50,14 66,10 83,8 100,6" fill="none" stroke="#3d8b6e" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="6" r="3" fill="#3d8b6e"/></svg></div>
+                        <div class="dash-kpi spa-kpi"><div class="kpi-top"><span class="spa-kpi-label">Items Reviewed</span><span class="spa-kpi-badge amber">12 flagged</span></div><span class="spa-kpi-val pf">47</span><div class="kpi-donut-mini"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="rgba(51,97,81,.06)" stroke-width="4.5"/><circle cx="18" cy="18" r="14" fill="none" stroke="#3d8b6e" stroke-width="4.5" stroke-dasharray="74.5 25.5" stroke-dashoffset="25" stroke-linecap="round"/><circle cx="18" cy="18" r="14" fill="none" stroke="#b85a5a" stroke-width="4.5" stroke-dasharray="25.5 74.5" stroke-dashoffset="50.5" stroke-linecap="round"/></svg><div class="kpi-donut-label"><span style="color:#3d8b6e">35 ok</span><span style="color:#b85a5a">12 flag</span></div></div></div>
+                    </div>
+                    <div class="dash-two-col">
+                        <div class="dash-panel">
+                            <div class="dash-panel-head"><h4>Margin by Category</h4><span class="dash-panel-tag">Profit vs food cost vs labor</span></div>
                             <div class="stacked-bars">
-                                <div class="stacked-row"><span class="stacked-label">Espresso</span><div class="stacked-track"><div class="stacked-seg" style="width:88%;background:#3d8b6e" title="88% margin"></div><div class="stacked-seg" style="width:8%;background:#c4933b"></div><div class="stacked-seg" style="width:4%;background:#b85a5a"></div></div><span class="stacked-val">88%</span></div>
-                                <div class="stacked-row"><span class="stacked-label">Brunch</span><div class="stacked-track"><div class="stacked-seg" style="width:65%;background:#3d8b6e"></div><div class="stacked-seg" style="width:22%;background:#c4933b"></div><div class="stacked-seg" style="width:13%;background:#b85a5a"></div></div><span class="stacked-val">65%</span></div>
-                                <div class="stacked-row"><span class="stacked-label">Appetizers</span><div class="stacked-track"><div class="stacked-seg" style="width:52%;background:#607c75"></div><div class="stacked-seg" style="width:28%;background:#c4933b"></div><div class="stacked-seg" style="width:20%;background:#b85a5a"></div></div><span class="stacked-val">52%</span></div>
-                                <div class="stacked-row"><span class="stacked-label">Desserts</span><div class="stacked-track"><div class="stacked-seg" style="width:35%;background:#c4a18b"></div><div class="stacked-seg" style="width:35%;background:#c4933b"></div><div class="stacked-seg" style="width:30%;background:#b85a5a"></div></div><span class="stacked-val">35%</span></div>
+                                <div class="stacked-row"><span class="stacked-label">Espresso</span><div class="stacked-track"><div class="stacked-seg" style="width:88%;background:#3d8b6e"></div><div class="stacked-seg" style="width:8%;background:#c4933b"></div><div class="stacked-seg" style="width:4%;background:#b85a5a"></div></div><span class="stacked-val pf">88%</span></div>
+                                <div class="stacked-row"><span class="stacked-label">Brunch</span><div class="stacked-track"><div class="stacked-seg" style="width:65%;background:#3d8b6e"></div><div class="stacked-seg" style="width:22%;background:#c4933b"></div><div class="stacked-seg" style="width:13%;background:#b85a5a"></div></div><span class="stacked-val pf">65%</span></div>
+                                <div class="stacked-row"><span class="stacked-label">Appetizers</span><div class="stacked-track"><div class="stacked-seg" style="width:52%;background:#607c75"></div><div class="stacked-seg" style="width:28%;background:#c4933b"></div><div class="stacked-seg" style="width:20%;background:#b85a5a"></div></div><span class="stacked-val pf">52%</span></div>
+                                <div class="stacked-row"><span class="stacked-label">Desserts</span><div class="stacked-track"><div class="stacked-seg" style="width:35%;background:#c4a18b"></div><div class="stacked-seg" style="width:35%;background:#c4933b"></div><div class="stacked-seg" style="width:30%;background:#b85a5a"></div></div><span class="stacked-val pf">35%</span></div>
                             </div>
                             <div class="stacked-legend"><span><i style="background:#3d8b6e"></i>Profit</span><span><i style="background:#c4933b"></i>Food cost</span><span><i style="background:#b85a5a"></i>Labor</span></div>
                         </div>
                         <div class="dash-panel">
                             <div class="dash-panel-head"><h4>Flagged for Repricing</h4><span class="dash-panel-tag">Below 28% target margin</span></div>
-                            <div class="dash-roas-table">
-                                <div class="dash-roas-head"><span>Item</span><span>Price</span><span>Margin</span></div>
-                                <div class="dash-roas-row danger"><span>Smoked Salmon Benedict</span><span>$18</span><span class="dash-roas-pill low">22%</span></div>
-                                <div class="dash-roas-row danger"><span>Wagyu Burger</span><span>$24</span><span class="dash-roas-pill low">19%</span></div>
-                                <div class="dash-roas-row"><span>Truffle Fries</span><span>$12</span><span class="dash-roas-pill mid">31%</span></div>
-                                <div class="dash-roas-row"><span>Lobster Mac & Cheese</span><span>$22</span><span class="dash-roas-pill mid">28%</span></div>
-                            </div>
+                            <div class="dash-roas-table"><div class="dash-roas-head"><span>Item</span><span>Price</span><span>Margin</span></div><div class="dash-roas-row danger"><span>Smoked Salmon Benedict</span><span>$18</span><span class="dash-roas-pill low">22%</span></div><div class="dash-roas-row danger"><span>Wagyu Burger</span><span>$24</span><span class="dash-roas-pill low">19%</span></div><div class="dash-roas-row"><span>Truffle Fries</span><span>$12</span><span class="dash-roas-pill mid">31%</span></div><div class="dash-roas-row"><span>Lobster Mac & Cheese</span><span>$22</span><span class="dash-roas-pill mid">28%</span></div></div>
                         </div>
                     </div>
-                    <div class="dash-spa-insight"><div class="dash-insight-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3d8b6e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><div><strong>CFO Insight:</strong> Repricing 12 items below the 28% target recovers <strong>$3,400/mo ($40,800/year)</strong> without changing a recipe. Espresso at 88% margin should be featured more prominently — a 10% upsell rate adds $6K/year.</div></div>
+                    <div class="dash-insight-rich"><div class="dash-insight-bar green"></div><div class="dash-insight-content"><span class="dash-insight-label">CFO Insight: Immediate Revenue Recovery</span><div class="dash-insight-stats"><div><span class="pf" style="color:#3d8b6e">$40,800/yr</span><small>recovered by repricing 12 items below the 28% food cost target</small></div><div><span class="pf">88%</span><small>espresso margin — feature more prominently on the menu and table tents</small></div><div><span class="pf" style="color:#b85a5a">$18 &rarr; $21</span><small>suggested Benedict reprice based on ingredient cost + 30% margin target</small></div></div></div></div>
                 </div>
             </div>
         </div>

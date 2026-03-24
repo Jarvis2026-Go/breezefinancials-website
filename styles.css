@@ -372,6 +372,75 @@ img { max-width: 100%; display: block; }
 .dash-spa-insight strong { color:#4a6159; }
 .dash-spa-insight em { color:#b85a5a; font-style:italic; }
 
+/* Dashboard Tabs */
+.dash-tabs { display:flex; justify-content:center; gap:8px; margin-bottom:32px; flex-wrap:wrap; }
+.dash-tab { display:inline-flex; align-items:center; gap:8px; padding:10px 22px; border-radius:100px; border:1.5px solid var(--gray-200); background:#fff; color:var(--gray-600); font-size:14px; font-weight:600; font-family:inherit; cursor:pointer; transition:all .2s; }
+.dash-tab:hover { border-color:var(--teal-300); color:var(--teal-700); }
+.dash-tab.active { background:var(--teal-500); border-color:var(--teal-500); color:#fff; box-shadow:0 4px 12px rgba(20,184,166,.25); }
+.dash-view { display:none; }
+.dash-view.active { display:block; animation:fadeInUp .5s ease-out; }
+
+/* Playfair Display for dashboard numbers */
+.pf { font-family:'Playfair Display', Georgia, serif; }
+
+/* Rich Insight Card */
+.dash-insight-rich { display:flex; border-radius:12px; overflow:hidden; background:#fff; border:1px solid rgba(96,124,117,.1); margin-bottom:0; }
+.dash-insight-bar { width:5px; flex-shrink:0; }
+.dash-insight-bar.sage { background:linear-gradient(180deg,#607c75,#4a6159); }
+.dash-insight-bar.rose { background:linear-gradient(180deg,#b85a5a,#943a3a); }
+.dash-insight-bar.green { background:linear-gradient(180deg,#3d8b6e,#2d6b52); }
+.dash-insight-content { padding:20px 24px; flex:1; }
+.dash-insight-label { display:block; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#607c75; margin-bottom:14px; }
+.dash-insight-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:640px) { .dash-insight-stats { grid-template-columns:1fr; } }
+.dash-insight-stats > div span { display:block; font-size:24px; font-weight:700; color:#2d3a36; line-height:1.2; margin-bottom:4px; }
+.dash-insight-stats small { font-size:12px; color:#5a6b65; line-height:1.5; }
+
+/* Horizontal Bar Chart */
+.hbar-chart { display:flex; flex-direction:column; gap:14px; }
+.hbar { display:flex; align-items:center; gap:12px; }
+.hbar-label { width:130px; flex-shrink:0; font-size:13px; color:#5a6b65; text-align:right; font-weight:500; }
+@media (max-width:480px) { .hbar-label { width:80px; font-size:11px; } }
+.hbar-track { flex:1; height:14px; background:rgba(96,124,117,.04); border-radius:7px; overflow:hidden; }
+.hbar-fill { height:100%; border-radius:7px; transition:width .8s ease; }
+.hbar-fill.rose { background:linear-gradient(90deg,#b85a5a,#d07878) !important; }
+.hbar-val { width:65px; font-size:14px; font-weight:700; color:#2d3a36; }
+
+/* Service Profitability Table */
+.profit-tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13px; }
+.profit-tbl thead th { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#8a9a94; padding:10px 8px; text-align:right; border-bottom:2px solid rgba(96,124,117,.1); white-space:nowrap; }
+.profit-tbl thead th:first-child { text-align:left; }
+.profit-tbl tbody td { padding:12px 8px; border-bottom:1px solid rgba(96,124,117,.05); text-align:right; color:#2d3a36; font-variant-numeric:tabular-nums; }
+.profit-tbl tbody td:first-child { text-align:left; }
+.profit-tbl tbody td small { display:block; font-size:11px; color:#8a9a94; margin-top:1px; }
+.profit-tbl tbody tr:hover { background:rgba(96,124,117,.03); }
+.profit-tbl .pos { color:#3d8b6e; font-weight:600; }
+.profit-tbl .neg { color:#b85a5a; font-weight:700; }
+.danger-row { background:rgba(184,90,90,.04) !important; }
+.mpill { display:inline-block; padding:2px 10px; border-radius:100px; font-size:11px; font-weight:700; }
+.mpill.high { background:rgba(61,139,110,.08); color:#3d8b6e; }
+.mpill.mid { background:rgba(196,147,59,.08); color:#c4933b; }
+.mpill.low { background:rgba(184,90,90,.08); color:#b85a5a; }
+
+/* Provider Bars */
+.provider-bars { display:flex; flex-direction:column; gap:14px; }
+.prov { display:flex; align-items:center; gap:10px; }
+.prov-name { width:100px; flex-shrink:0; font-size:13px; font-weight:600; color:#2d3a36; }
+.prov-name small { font-weight:400; color:#8a9a94; }
+.prov-bar-track { flex:1; height:12px; background:rgba(96,124,117,.04); border-radius:6px; overflow:hidden; }
+.prov-bar { height:100%; border-radius:6px; transition:width .8s ease; }
+.prov-stat { font-size:11px; color:#5a6b65; white-space:nowrap; width:100px; text-align:right; }
+@media (max-width:480px) { .prov-name { width:70px; font-size:11px; } .prov-stat { width:70px; font-size:10px; } }
+
+/* ROAS Visual Bars (spend vs return) */
+.roas-visual { display:flex; flex-direction:column; gap:12px; }
+.roas-bar-pair { display:flex; align-items:center; gap:10px; }
+.roas-bar-pair.danger { background:rgba(184,90,90,.03); border-radius:8px; padding:6px 8px; margin:0 -8px; }
+.roas-ch { width:55px; flex-shrink:0; font-size:12px; font-weight:600; color:#5a6b65; }
+.roas-bars { flex:1; display:flex; height:12px; border-radius:6px; overflow:hidden; gap:2px; }
+.roas-spend { background:#c4a18b; border-radius:6px 0 0 6px; display:flex; align-items:center; justify-content:center; font-size:8px; color:#fff; font-weight:600; white-space:nowrap; overflow:hidden; }
+.roas-return { background:#607c75; border-radius:0 6px 6px 0; display:flex; align-items:center; justify-content:center; font-size:8px; color:#fff; font-weight:600; white-space:nowrap; overflow:hidden; }
+
 /* KPI sparkline mini charts */
 .kpi-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
 .kpi-spark { width:100%; height:28px; margin-top:8px; display:block; }
@@ -396,18 +465,7 @@ img { max-width: 100%; display: block; }
 .donut-legend span { display:flex; align-items:center; gap:6px; font-size:11px; color:#5a6b65; }
 .donut-legend i { width:8px; height:8px; border-radius:2px; display:inline-block; flex-shrink:0; }
 
-/* Expanded ROAS table */
-.dash-roas-head { grid-template-columns:1fr 60px 60px 50px 60px; }
-.dash-roas-row { grid-template-columns:1fr 60px 60px 50px 60px; }
-.roas-rebook { font-size:12px; font-weight:600; }
-.roas-rebook.high { color:#3d8b6e; }
-.roas-rebook.mid { color:#c4933b; }
-.roas-rebook.low { color:#b85a5a; }
-@media (max-width:640px) {
-    .dash-roas-head, .dash-roas-row { grid-template-columns:1fr 50px 50px; }
-    .dash-roas-head span:nth-child(3), .dash-roas-head span:nth-child(4),
-    .dash-roas-row span:nth-child(3), .dash-roas-row .roas-rebook { display:none; }
-}
+/* ROAS table (3 col default for restaurant) */
 
 /* Food cost gauge */
 .kpi-gauge { margin-top:8px; width:100%; }

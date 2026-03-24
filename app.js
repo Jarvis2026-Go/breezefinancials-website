@@ -203,6 +203,16 @@ function loadCal() {
 }
 
 // ============================================
+// DASHBOARD TAB TOGGLE
+// ============================================
+function switchDash(id) {
+    document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.dash-view').forEach(v => v.classList.remove('active'));
+    document.getElementById('dash-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+
+// ============================================
 // CHECKBOX TOGGLE
 // ============================================
 function tog(el) { el.classList.toggle('on'); }
