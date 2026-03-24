@@ -100,6 +100,22 @@ img { max-width: 100%; display: block; }
 .hf-next-box ol { padding-left:20px; margin-top:8px; display:flex; flex-direction:column; gap:6px; }
 .hf-next-box li { color:var(--gray-600); }
 
+/* Rich confirmation panel */
+.confirm-timeline { display:flex; flex-direction:column; gap:0; margin:20px 0; text-align:left; }
+.confirm-step { display:flex; gap:14px; padding-bottom:16px; position:relative; }
+.confirm-step:not(:last-child)::after { content:''; position:absolute; left:5px; top:14px; bottom:0; width:2px; background:var(--teal-100); }
+.confirm-step:last-child { padding-bottom:0; }
+.confirm-dot { width:12px; height:12px; background:var(--teal-500); border-radius:50%; flex-shrink:0; margin-top:4px; position:relative; z-index:1; }
+.confirm-step strong { font-size:13px; color:var(--gray-900); }
+.confirm-step span { font-size:12px; color:var(--gray-500); }
+.confirm-prep { text-align:left; background:var(--teal-50); border:1px solid var(--teal-100); border-radius:10px; padding:16px 18px; margin:16px 0; font-size:13px; }
+.confirm-prep strong { display:block; color:var(--teal-800); margin-bottom:8px; font-size:13px; }
+.confirm-prep ul { padding-left:18px; margin:0; display:flex; flex-direction:column; gap:4px; }
+.confirm-prep li { color:var(--gray-600); font-size:13px; }
+.confirm-prep-note { display:block; margin-top:10px; font-size:12px; color:var(--gray-400); font-style:italic; }
+.confirm-reschedule { text-align:center; margin-top:16px; padding-top:16px; border-top:1px solid var(--gray-100); font-size:13px; color:var(--gray-500); }
+.confirm-reschedule a { color:var(--teal-600); font-weight:600; font-size:13px; }
+
 /* ---- Form Fields (shared) ---- */
 .field { margin-bottom:16px; }
 .field label { display:block; font-size:14px; font-weight:500; color:var(--gray-700); margin-bottom:6px; }
