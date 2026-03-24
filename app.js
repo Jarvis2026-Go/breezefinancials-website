@@ -14,6 +14,14 @@ const CALENDLY = {
 function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('hidden');
 }
+// Close mobile menu on outside click
+document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.mobile-menu-btn');
+    if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.add('hidden');
+    }
+});
 
 // ============================================
 // FLOATING CTA — show on scroll
@@ -31,6 +39,7 @@ window.addEventListener('scroll', () => {
 // HERO FORM (Audit Request — 2-step)
 // ============================================
 let heroStep = 1;
+let heroSubmitted = false;
 
 function heroFormNext(from) {
     if (from === 1) {
@@ -39,9 +48,10 @@ function heroFormNext(from) {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { markField('hf-email'); return; }
     }
     if (from === 2) {
+        if (heroSubmitted) return; // prevent double-submit
         const biz = v('hf-biz'), type = document.getElementById('hf-type').value;
         if (!biz || !type) { markFields(['hf-biz', 'hf-type']); return; }
-        // Submit audit request
+        heroSubmitted = true;
         storeLead('audit-request', {
             name: v('hf-name'), email: v('hf-email'), phone: v('hf-phone'),
             business: v('hf-biz'), type: document.getElementById('hf-type').value,
@@ -118,12 +128,20 @@ function bkValidate(s) {
 // ============================================
 // CALENDLY EMBED
 // ============================================
+let calMessageHandler = null; // Track listener to prevent stacking
+
 function loadCal() {
     const wrap = document.getElementById('calWrap');
     const load = document.getElementById('calLoad');
     const old = wrap.querySelector('.calendly-inline-widget');
     if (old) old.remove();
     load.style.display = 'block';
+
+    // Remove previous listener if any
+    if (calMessageHandler) {
+        window.removeEventListener('message', calMessageHandler);
+        calMessageHandler = null;
+    }
 
     const pains = Array.from(document.querySelectorAll('#bk-pains .on')).map(c => c.dataset.value);
     const info = [
@@ -147,32 +165,41 @@ function loadCal() {
     widget.dataset.url = url;
     wrap.appendChild(widget);
 
-    const init = () => {
+    // Init with retry limit and fallback
+    const init = (retries) => {
+        retries = retries || 0;
         if (window.Calendly) {
             window.Calendly.initInlineWidget({ url, parentElement: widget });
             load.style.display = 'none';
+        } else if (retries < 30) {
+            setTimeout(() => init(retries + 1), 300);
         } else {
-            setTimeout(init, 300);
+            // Fallback if Calendly fails to load (ad blocker, network issue)
+            load.innerHTML = '<p style="color:var(--gray-600)">Could not load the calendar. <a href="' + CALENDLY[callType] + '" target="_blank" rel="noopener" style="color:var(--teal-600);font-weight:600">Click here to book directly &rarr;</a></p>';
         }
     };
-    init();
+    init(0);
 
-    window.addEventListener('message', function h(e) {
-        if (e.data.event === 'calendly.event_scheduled') {
-            window.removeEventListener('message', h);
+    // Listen for scheduled event (with null guard)
+    calMessageHandler = function(e) {
+        if (e.data && e.data.event === 'calendly.event_scheduled') {
+            window.removeEventListener('message', calMessageHandler);
+            calMessageHandler = null;
             bkStep = 4;
             bkGo(4);
             storeLead('booked', {
                 callType,
                 firstName: v('bk-fn'), lastName: v('bk-ln'),
                 email: v('bk-email'), phone: v('bk-phone'),
+                referral: v('bk-ref'),
                 business: v('bk-biz'), industry: document.getElementById('bk-ind').value,
                 revenue: document.getElementById('bk-rev').value,
                 painPoints: pains, notes: v('bk-notes')
             });
             if (typeof fbq === 'function') fbq('track', 'Schedule');
         }
-    });
+    };
+    window.addEventListener('message', calMessageHandler);
 }
 
 // ============================================
@@ -254,9 +281,15 @@ function markField(id) {
 document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+    const href = link.getAttribute('href');
+    if (href === '#') return; // skip bare hash to avoid querySelector crash
+    try {
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    } catch (err) {
+        // invalid selector, ignore
     }
 });
