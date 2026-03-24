@@ -36,47 +36,6 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================
-// HERO FORM (Audit Request — 2-step)
-// ============================================
-let heroStep = 1;
-let heroSubmitted = false;
-
-function heroFormNext(from) {
-    if (from === 1) {
-        const name = v('hf-name'), email = v('hf-email');
-        if (!name || !email) { markFields(['hf-name', 'hf-email']); return; }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { markField('hf-email'); return; }
-    }
-    if (from === 2) {
-        if (heroSubmitted) return; // prevent double-submit
-        const biz = v('hf-biz'), type = document.getElementById('hf-type').value;
-        if (!biz || !type) { markFields(['hf-biz', 'hf-type']); return; }
-        heroSubmitted = true;
-        storeLead('audit-request', {
-            name: v('hf-name'), email: v('hf-email'), phone: v('hf-phone'),
-            business: v('hf-biz'), type: document.getElementById('hf-type').value,
-            revenue: document.getElementById('hf-rev').value
-        });
-        if (typeof fbq === 'function') fbq('track', 'SubmitApplication');
-    }
-    heroStep = from + 1;
-    updateHeroForm();
-}
-
-function heroFormBack() {
-    heroStep = 1;
-    updateHeroForm();
-}
-
-function updateHeroForm() {
-    for (let i = 1; i <= 3; i++) {
-        document.getElementById('hf-' + i).classList.toggle('active', i === heroStep);
-        const tab = document.getElementById('hf-si-' + i);
-        tab.className = 'hf-step' + (i === heroStep ? ' active' : i < heroStep ? ' done' : '');
-    }
-}
-
-// ============================================
 // BOOKING SECTION (Discovery/Strategy — 3-step + Calendly)
 // ============================================
 let bkStep = 1;
@@ -205,11 +164,11 @@ function loadCal() {
 // ============================================
 // DASHBOARD TAB TOGGLE
 // ============================================
-function switchDash(id) {
+function switchDash(id, e) {
     document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.dash-view').forEach(v => v.classList.remove('active'));
     document.getElementById('dash-' + id).classList.add('active');
-    event.currentTarget.classList.add('active');
+    if (e && e.currentTarget) e.currentTarget.classList.add('active');
 }
 
 // ============================================
