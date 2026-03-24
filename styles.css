@@ -255,7 +255,9 @@ img { max-width: 100%; display: block; }
 .guarantee-terms { color:var(--gray-400); }
 .guarantee-fine { display:block; font-size:11px; color:var(--gray-400); margin-top:8px; }
 
-/* ---- Booking Section ---- */
+/* ---- Booking Section (centered single form) ---- */
+.booking-centered { max-width:560px; margin:0 auto; }
+.book-reassurance { text-align:center; font-size:13px; color:var(--gray-400); margin-top:16px; }
 .hero-badge-inline { display:inline-flex; align-items:center; gap:8px; background:var(--teal-100); color:var(--teal-800); font-size:13px; font-weight:600; padding:6px 16px; border-radius:9999px; margin-bottom:16px; }
 .avail-tag { display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.7); backdrop-filter:blur(4px); border:1px solid var(--teal-100); padding:10px 20px; border-radius:12px; font-size:14px; color:var(--gray-700); font-weight:500; margin-top:16px; }
 .green-dot { width:10px; height:10px; background:var(--teal-500); border-radius:50%; animation:pulse-soft 2s ease-in-out infinite; }
