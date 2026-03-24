@@ -65,180 +65,32 @@
     <div class="wave-blob" style="top:128px;right:80px;width:96px;height:96px;background:var(--teal-300);opacity:.2;animation-delay:1s"></div>
     <div class="wave-blob" style="bottom:80px;left:33%;width:80px;height:80px;background:var(--teal-100);opacity:.3;animation-delay:2s"></div>
 
-    <div class="container hero-grid">
-        <!-- Left Column -->
-        <div class="hero-text">
-            <div class="cert-badges" style="margin-bottom:16px">
-                <span class="cert-badge">CPA Certified</span>
-                <span class="cert-badge">QuickBooks ProAdvisor</span>
-                <span class="cert-badge" style="background:var(--teal-100);color:var(--teal-800)">Toronto & GTA</span>
-            </div>
-            <h1>The <span class="text-teal">Fractional CFO</span> for Toronto Small Businesses</h1>
-            <p class="hero-sub">Get a free bookkeeping audit, uncover hidden profit leaks, and see exactly what CFO-level financial clarity looks like for your business.</p>
-
-            <div class="hero-promises">
-                <div class="hero-promise"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <strong>Free audit</strong> — delivered in 2-3 business days</div>
-                <div class="hero-promise"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <strong>Real numbers</strong> — avg client saves $2,800/mo in hidden costs</div>
-                <div class="hero-promise"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <strong>No strings</strong> — 100% confidential, zero obligation</div>
-            </div>
-
-            <p class="hero-trusted">Trusted by Toronto small businesses &bull; 5-star rated</p>
+    <div class="container hero-centered">
+        <div class="cert-badges" style="justify-content:center;margin-bottom:20px">
+            <span class="cert-badge">CPA Certified</span>
+            <span class="cert-badge">QuickBooks ProAdvisor</span>
+            <span class="cert-badge" style="background:var(--teal-100);color:var(--teal-800)">Toronto & GTA</span>
         </div>
-
-        <!-- Right Column: Enhanced Intake Form -->
-        <div class="hero-form-card animate-fadeInUp" id="heroForm">
-            <div class="form-header-bar">
-                <h2>Request Your Free Audit</h2>
-                <p>Takes 60 seconds — we'll prepare a personalized review</p>
-            </div>
-            <div class="hero-form-steps">
-                <div class="hf-step active" id="hf-si-1"><span class="hf-num">1</span> Info</div>
-                <div class="hf-step" id="hf-si-2"><span class="hf-num">2</span> Business</div>
-                <div class="hf-step" id="hf-si-3"><span class="hf-num">3</span> Done</div>
-            </div>
-            <div class="hero-form-body">
-                <!-- Step 1 -->
-                <div class="hf-panel active" id="hf-1">
-                    <div class="field">
-                        <label>Full Name <span class="req">*</span></label>
-                        <input type="text" id="hf-name" placeholder="Sarah Mitchell">
-                    </div>
-                    <div class="field">
-                        <label>Email Address <span class="req">*</span></label>
-                        <input type="email" id="hf-email" placeholder="you@yourbusiness.com">
-                    </div>
-                    <div class="field">
-                        <label>Phone</label>
-                        <input type="tel" id="hf-phone" placeholder="(416) 555-0123">
-                    </div>
-                    <button class="btn-form-primary" onclick="heroFormNext(1)">Continue <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-                </div>
-                <!-- Step 2 -->
-                <div class="hf-panel" id="hf-2">
-                    <div class="field">
-                        <label>Business Name <span class="req">*</span></label>
-                        <input type="text" id="hf-biz" placeholder="Your Company Inc.">
-                    </div>
-                    <div class="field">
-                        <label>Business Type <span class="req">*</span></label>
-                        <select id="hf-type">
-                            <option value="">Select your business type</option>
-                            <option>Restaurant/Cafe</option><option>Retail Store</option>
-                            <option>Contractor/Construction</option><option>E-commerce</option>
-                            <option>Professional Services</option><option>Tech/Software</option>
-                            <option>Healthcare</option><option>Fitness/Wellness</option>
-                            <option>Beauty/Salon</option><option>Automotive</option>
-                            <option>Real Estate</option><option>Consulting</option>
-                            <option>Manufacturing</option><option>Other</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label>Monthly Revenue</label>
-                        <select id="hf-rev">
-                            <option value="">Select range...</option>
-                            <option>Under $20K</option><option>$20K – $50K</option>
-                            <option>$50K – $100K</option><option>$100K – $250K</option>
-                            <option>$250K+</option><option>Prefer not to say</option>
-                        </select>
-                    </div>
-                    <div class="btn-row-hero">
-                        <button class="btn-form-outline" onclick="heroFormBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-                        <button class="btn-form-primary" onclick="heroFormNext(2)">Request Free Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-                    </div>
-                </div>
-                <!-- Step 3: Confirmation -->
-                <div class="hf-panel" id="hf-3">
-                    <div class="hf-confirm">
-                        <div class="hf-confirm-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
-                        <h3>Audit Request Received!</h3>
-                        <p>We'll review your information and reach out within 24 hours to schedule your complimentary audit.</p>
-                        <div class="hf-next-box">
-                            <strong>What happens next:</strong>
-                            <ol>
-                                <li>We review your business details</li>
-                                <li>A CFO expert reaches out within 24 hours</li>
-                                <li>You receive your personalized audit within 2-3 business days</li>
-                            </ol>
-                        </div>
-                        <a href="#book" class="btn-form-primary" style="text-decoration:none;text-align:center">Or Book a Call Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-form-trust">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                Data is 100% confidential & secure
+        <h1 class="hero-h1">The <span class="text-teal">Fractional CFO</span> for<br>Toronto Small Businesses</h1>
+        <p class="hero-sub-centered">We find the profit leaks hiding in your business. Our average client saves <strong>$2,800/month</strong> in hidden costs — and the first audit is free.</p>
+        <div class="hero-ctas">
+            <a href="#book" class="btn-pill hero-cta-main">Get Your Free Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="#dashboards" class="hero-cta-secondary">See what we deliver &darr;</a>
+        </div>
+        <div class="hero-proof">
+            <div class="hero-proof-stats">
+                <span><strong>$2,800</strong> avg monthly savings</span>
+                <span class="hero-proof-sep"></span>
+                <span><strong>2-3 days</strong> audit turnaround</span>
+                <span class="hero-proof-sep"></span>
+                <span><strong>100%</strong> confidential</span>
             </div>
         </div>
     </div>
 </section>
-
-<!-- ========== WHY BREEZE — PRICING ========== -->
-<section class="section bg-gray-50" id="why-breeze">
-    <div class="container">
-        <div class="section-head">
-            <h2>Bookkeeping is just the start. Our real value: <span class="text-teal">strategic financial leadership</span> for your business.</h2>
-            <p>What is a Fractional CFO? Get all the expertise, without the full-time cost.</p>
-        </div>
-
-        <div class="pricing-grid">
-            <!-- Essentials -->
-            <div class="pricing-card">
-                <div class="pricing-icon blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                <h3>Essentials CFO</h3>
-                <p class="pricing-subtitle">Clarity & Confidence</p>
-                <div class="pricing-price">$650–$760<span>/month</span></div>
-                <ul class="pricing-features">
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Monthly financial snapshots</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Quarterly strategic reviews</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Basic cash flow tracking</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Email support (48hr response)</li>
-                </ul>
-                <p class="pricing-footer"><em>Perfect for: Small businesses with steady operations seeking financial clarity</em></p>
-            </div>
-
-            <!-- Growth (Featured) -->
-            <div class="pricing-card featured">
-                <div class="popular-badge">MOST POPULAR</div>
-                <div class="pricing-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                <h3>Growth CFO</h3>
-                <p class="pricing-subtitle">Proactive Strategic Guidance</p>
-                <div class="pricing-price">$1,400–$1,800<span>/month</span></div>
-                <ul class="pricing-features">
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Detailed monthly insights</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Monthly strategic forecasting</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Cash flow optimization</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Priority email & Slack support</li>
-                </ul>
-                <p class="pricing-footer"><em>Perfect for: Growing businesses scaling operations</em></p>
-            </div>
-
-            <!-- Embedded -->
-            <div class="pricing-card">
-                <div class="pricing-icon purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                <h3>Embedded CFO</h3>
-                <p class="pricing-subtitle">Fully Integrated Partner</p>
-                <div class="pricing-price">$2,500–$3,500<span>/month</span></div>
-                <ul class="pricing-features">
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Weekly forecasting sessions</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Comprehensive financial reporting</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Integrated financial dashboards</li>
-                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Weekly strategy + daily access</li>
-                </ul>
-                <p class="pricing-footer"><em>Perfect for: Rapidly expanding businesses needing deep strategic guidance</em></p>
-            </div>
-        </div>
-
-        <div class="callout-box">
-            <strong>Already have a bookkeeper?</strong> See how a CFO-level view can take your business further.
-            <a href="#book">Book a free call &rarr;</a>
-        </div>
-    </div>
-</section>
-
 
 <!-- ========== HOW IT WORKS ========== -->
-<section class="wave-bg section" id="process">
-    <div class="wave-blob" style="top:20px;right:60px;width:64px;height:64px;background:var(--teal-200);opacity:.2"></div>
+<section class="section" id="process">
     <div class="container">
         <div class="section-head">
             <h2>How It <span class="text-teal">Works</span></h2>
@@ -283,21 +135,21 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <span class="result-badge">Significant tax savings</span>
-                <p class="quote">"We saved thousands in our first year with Breeze's CFO insights. Got clarity on our business and now we can finally sleep at night knowing our finances are optimized."</p>
-                <div class="test-author"><div class="avatar" style="background:var(--teal-600)">SC</div><div><strong>Sarah C.</strong><br><span>Tech Startup Founder</span></div></div>
+                <span class="result-badge">$34K saved in Year 1</span>
+                <p class="quote">"Breeze found tax deductions and cost leaks our previous accountant missed entirely. $34,200 in savings in the first 12 months — and now we actually understand our P&L."</p>
+                <div class="test-author"><div class="avatar" style="background:var(--teal-600)">SC</div><div><strong>Sarah C.</strong><br><span>SaaS Startup, $1.2M Revenue</span></div></div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <span class="result-badge">Zero cash flow issues</span>
-                <p class="quote">"The cash flow planning alone has been game-changing. The Breeze team helped us navigate a critical growth period without cash flow stress."</p>
-                <div class="test-author"><div class="avatar" style="background:var(--teal-400)">MR</div><div><strong>Maria R.</strong><br><span>Restaurant Owner</span></div></div>
+                <span class="result-badge">Zero cash flow surprises</span>
+                <p class="quote">"We were growing 30% year-over-year but constantly scrambling for cash. Breeze built a cash flow model that let us hire two new staff without stress. Haven't missed payroll since."</p>
+                <div class="test-author"><div class="avatar" style="background:var(--teal-400)">MR</div><div><strong>Maria R.</strong><br><span>Restaurant Owner, 2 Locations</span></div></div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <span class="result-badge">Improved profitability</span>
-                <p class="quote">"Finally, financial reports that actually help me make decisions. The monthly reviews keep us on track and profitable."</p>
-                <div class="test-author"><div class="avatar" style="background:var(--teal-800)">DT</div><div><strong>David T.</strong><br><span>Construction Company</span></div></div>
+                <span class="result-badge">Margins up 8 points</span>
+                <p class="quote">"The monthly dashboard showed us exactly which jobs were profitable and which were bleeding money. We dropped two service lines and our margins jumped from 12% to 20%."</p>
+                <div class="test-author"><div class="avatar" style="background:var(--teal-800)">DT</div><div><strong>David T.</strong><br><span>Contractor, $2.4M Revenue</span></div></div>
             </div>
         </div>
     </div>
@@ -509,10 +361,8 @@
 <section class="section" id="book">
     <div class="container">
         <div class="section-head">
-            <div class="hero-badge-inline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Limited Availability — March 2026</div>
-            <h2>Book a Call With Our Team</h2>
-            <p>Choose the right conversation for where you are, answer a few quick questions, and pick a time.</p>
-            <div class="avail-tag"><span class="green-dot"></span> Currently accepting <strong>&nbsp;2 new clients&nbsp;</strong> for April</div>
+            <h2>Book a Call With <span class="text-teal">Our Team</span></h2>
+            <p>Fill out a few quick questions so we can prepare, then pick a time that works for you.</p>
         </div>
 
         <div class="booking-grid">
